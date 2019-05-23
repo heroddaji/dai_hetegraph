@@ -1,9 +1,11 @@
 import numpy as np
-import utils
+
 from surprise import SVD
 from surprise import Dataset
 from surprise import accuracy
 from surprise.model_selection import train_test_split
+
+import drec.utils as utils
 
 def run_svd(dataset):
 

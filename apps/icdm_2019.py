@@ -1,29 +1,22 @@
+from __future__ import (absolute_import, division, print_function, unicode_literals)
 import random
 from collections import defaultdict
 
 from torch.autograd import Variable
 from sklearn.metrics import f1_score
 from sklearn.model_selection import train_test_split
-
 from tensorboardX import SummaryWriter
 from annoy import AnnoyIndex
 import networkx as nx
-
-from datasets.ds_movielens import *
-from datasets.ds_bookcrossing import *
-from models.feedforward.feedforward import FeedforwardModel
-from models.heteedge.heteedge_model import *
-from models.heteedge.heteedge_aggregation import *
-from models.heteedge.heteedge_encoder import *
-from models.hetegraphrec.hetegraphrec_aggregation import *
-from models.hetegraphrec.hetegraphrec_model import *
-from models.hetegraphrec.hetegraphrec_sampler import *
-from models.hetegraphrec.hetegraphrec_loss import *
-from utils.libs.pytorchtools import *
-
-from cikm import run
-from cikm import evaluate_pred
 from surprise import Prediction
+
+
+from drec.ds import MovielensDataset
+from drec.ds import BookCrossingDataset
+from drec.models import *
+from cikm_2019 import run
+from cikm_2019 import evaluate_pred
+
 
 """
 HeteGraphRec models for different recommendation tasks
@@ -461,7 +454,7 @@ def cross_community_search(save_name, dimension=8):
 
     rmse, prec, rec, ils_sim = evaluate_pred(g, predictions)
     ds_name = 'movielens'
-    algo_name='GraphRec'
+    algo_name = 'GraphRec'
     with open(f'eval_{ds_name}.csv', 'a') as f:
         f.write(f'{ds_name}_{algo_name},rmse,{rmse},precision,{prec},recall,{rec},ils,{ils_sim}\n')
 

@@ -1,2 +1,6 @@
+networx
+numpy
+pandas
+sklearn
 pytorch
 tensorboardX

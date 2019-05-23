@@ -1,7 +1,6 @@
 import os
 from random import shuffle
 
-import utils
 import numpy as np
 import pandas as pd
 import networkx as nx
