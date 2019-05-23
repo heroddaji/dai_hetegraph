@@ -1,0 +1,45 @@
+todo: done
+log - tensorboard learn how to use -> ok
+grid search -> ok
+check relu first or after matmul -> ok
+unsupervised loss  -> ok, but have to disable normalize output
+mean pooling -> ok, need test
+save/load model -> ok
+find similarity -> ok
+more pooling functions
+organsize save objs, checkpoints, etc.
+add log-degree of node to feature
+mean pooling
+early stopping
+add plot hist to tensorboard
+fix graph bookcrossing ds
+fix 2 layer aggree
+
+todo: cikm short
+cross-search method for graphrec -> doing
+different similarity methods of item-item calculation
+..
+..
+evaluation scores for BX -> done
+evaluation scores for ML -> done
+
+todo: doing
+ngcann, rmse
+embed and edge rating
+ml-10m, ml1m
+diversified recsys
+unsupervised embed then supervised edge
+
+
+todo: future
+regularization
+convolve weighted mean with rating
+mean normalization
+another dataset implicit ratings
+validation loss / validation trainign
+t-sne plot
+
+problems:
+- current sampling strategy has a flaw, first pair may get 1 rating, but next one may get 5 rating
+- use one convolution layer for now (2 is too long and loss seem to fail to go lower)
+- current negative sampling strategy is random, need improvement
